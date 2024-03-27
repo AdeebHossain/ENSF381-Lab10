@@ -47,7 +47,7 @@ def update_product(product_id):
             # Update the product with the new data from the request
             updated_product_data = request.json
             product.update(updated_product_data)
-            # Write the updated products list back to the JSON file
+            # Write only the updated product back to the JSON file
             with open('products.json', 'w') as f:
                 json.dump({"products": products}, f)
             return jsonify(product), 200
@@ -70,4 +70,3 @@ def delete_product(product_id):
 if __name__ == '__main__':
     app.run(debug=True)
 
-    
