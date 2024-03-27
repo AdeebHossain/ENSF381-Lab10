@@ -34,10 +34,12 @@ export const searchProducts = async (query) => {
 };
 
 // Edits an existing product by ID
-// Edits an existing product by ID
 export const editProduct = async (id, product) => {
     try {
-        const response = await axios.put(`${BASE_URL}/${id}`, JSON.stringify(product), {
+        const response = await axios({
+            method: 'put',
+            url: `${BASE_URL}/${id}`,
+            data: product,
             headers: {
                 'Content-Type': 'application/json',
             },
