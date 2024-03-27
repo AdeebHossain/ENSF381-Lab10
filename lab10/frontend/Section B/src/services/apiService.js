@@ -36,14 +36,8 @@ export const searchProducts = async (query) => {
 // Edits an existing product by ID
 export const editProduct = async (id, product) => {
     try {
-        const response = await axios({
-            method: 'put',
-            url: `${BASE_URL}/${id}`,
-            data: product,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+        const response = await axios.put(`${BASE_URL}/update/${id}`);
+        console.log(response.data)
         return response.data;
     } catch (error) {
         throw error; // Rethrow to allow caller to handle

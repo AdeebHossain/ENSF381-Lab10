@@ -4,7 +4,7 @@ import json
 import os
 
 app = Flask(__name__)
-CORS(app, origins=["http://example.com", "http://localhost:3000"])  # Enable CORS for all domains on all routes
+CORS(app, origins=["http://127.0.0.1:5000", "http://localhost:3000"])  # Enable CORS for all domains on all routes
 
 def load_products():
     with open('products.json', 'r') as f:
