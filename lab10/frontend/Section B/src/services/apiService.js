@@ -46,12 +46,11 @@ export const editProduct = async (id, product) => {
 
 // Deletes a product by its ID
 export const removeProduct = async (id) => {
-    try {
-        const response = await axios.delete(`${BASE_URL}/${id}`);
-        return response.data;
-    } catch (error) {
-        throw error; // Rethrow to allow caller to handle
-    }
+    return axios.delete(`${BASE_URL}/add`, JSON.stringify(product), {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 };
 
 export const addProduct = (product) => {
